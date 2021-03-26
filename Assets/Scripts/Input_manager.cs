@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //! Handles user input
+/**
+ * Has a function to pass input into and returns true if that input is valid. 
+ */
 public class Input_manager : MonoBehaviour
 {
     //! Stores values for different types of movement.

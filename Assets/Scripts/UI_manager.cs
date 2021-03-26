@@ -4,11 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 //! Manages user interface
+/**
+ * Loads a scene depending on which button the user pressed.
+ * Provides a function to display the winning image.
+ */
 public class UI_manager : MonoBehaviour
 {
+    //! Object that draws the winning image.
     public GameObject win_obj;
+    //! Image component for win_obj
     private Image win_image;
-    private Image image;
     //! Get the win objects Image component
     private void Start()
     {

@@ -3,18 +3,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-//! Manages the game
+//! Manages the game and updates variables to the user interface
+/**
+ * Manages game logic such as checking to see if the player is dead and loading appropriate scenes.
+ * Updates variables to the user interface.
+ */
 public class GameManager : MonoBehaviour
 {
+    //! A reference to the player object
     public GameObject player;
+    //! A reference to UI manager
     public UI_manager uim;
+    //! A reference to Locamotion
     Locamotion loc;
+    //! A referece to ball
     Ball ball;
+    //! A referece to fade
     public fade fade;
+    //! A Text object that draws the framerate
     public Text framerate;
+    //! A Text object that draws the the players speed attribute
     public Text player_speed;
+    //! A Text object that draws the players boost attribute
     public Text player_boost;
+    //! A Text object that draws the players jump attribute
     public Text player_jump;
+    //! A Text object that draws the players stars attribute
     public Text player_stars;
     //! Set Variables and start coroutinte update_fps
     void Start()

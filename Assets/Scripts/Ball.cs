@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //! Handles game logic for the ball
+/**
+ * Destoyes the ball if the win condition or death condition passes
+ */
 public class Ball : MonoBehaviour
 {
     // Start is called before the first frame update

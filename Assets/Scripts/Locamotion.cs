@@ -5,12 +5,17 @@ using UnityEngine;
 // Locamotion script created by Andrew S Jonas
 // Last edited 17/03/2021
 //! Responsible for ball movement
+/**
+ * Adds forces to the ball for movement and jumping, includes logic for setting the boost switch
+ * and checking for the grounded condition.
+ */
 public class Locamotion : MonoBehaviour
 {
     //! Max speed of the ball.
     public float max_speed;
     //! The jump force of the ball.
     public float jump_force;
+    //!Vector to plug into jumping force
     private Vector3 jump_vector;
     //! The current forward speed.
     public float current_forwardSpeed;
@@ -24,7 +29,9 @@ public class Locamotion : MonoBehaviour
     public bool is_boost = false;
     //! Whether the ball is currently grounded or not.
     public bool is_grounded = false;
+    //! A reference to the cameras transform for directing the balls motion
     public Transform cam;
+    //! A reference to the Joystick class
     public Joystick joystick;//Touch Joystick
     //! A reference to imput manager.
     private Input_manager input_manager;
@@ -80,21 +87,22 @@ public class Locamotion : MonoBehaviour
     {
         //float hor_axis = joystick.Horizontal;
         //float vert_axis = joystick.Vertical;
-        
-       
+            //Get input
             float hor_axis = Input.GetAxis("Horizontal");
             float vert_axis = Input.GetAxis("Vertical");
             Debug.Log("hor_axis" + hor_axis);
             Debug.Log("vert_axis" + vert_axis);
-
-      try { 
-            Vector3 direction = new Vector3(vert_axis, 0f, -hor_axis).normalized;//Vector of direction
-
+      try {
+            //Get the vector of direction
+            Vector3 direction = new Vector3(vert_axis, 0f, -hor_axis).normalized;
+            //Check if there is input
             if (direction.magnitude >= 0.1f)
             {
+                //Get the target angle
                 float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-
+                //Set the move direction vector
                 Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+                //Apply torque
                 rb.AddTorque(moveDir.normalized * (torque), ForceMode.VelocityChange);
                 rb.AddTorque(moveDir.normalized * (torque), ForceMode.VelocityChange);
             }

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //! Collectabe object
+/**
+ * Checks for a collision and increases the players attributes based on the powertype  
+ */
 public class Collectable : MonoBehaviour
 {
     [Tooltip("Powerup types are: 0 speed, 1 boost, 2 jump, 3 health, 4 time increase, 5 stars")]

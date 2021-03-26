@@ -2,6 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //! Fades the screen to or from black
+/**
+ * Fades the screen to or from black, you can customise the fading behaviour with fade_out and alpha_mod.
+ */
 public class fade : MonoBehaviour
 {
     //! Should the script fade out.

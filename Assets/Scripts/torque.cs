@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //!Applies a rotation to objects
+/**
+ * Applies a torque to game objects to the axis specifed by rotation_pivot
+ */
 public class torque : MonoBehaviour
 {
+    //! Reference to the rigid body
     private Rigidbody rb;
     //! The value multiplied by the torque.
     public float torque_;

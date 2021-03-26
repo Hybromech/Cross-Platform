@@ -2,9 +2,14 @@ using UnityEngine;
 using Cinemachine;
 [RequireComponent(typeof(CinemachineFreeLook))]
 //!Modifies the cinemachine camera
+/**
+ * Modify the X_look and Y_look to change the movespeed of the camera
+ */
 public class Camera_Look : MonoBehaviour
 {
+    //! A reference to the CinemachineFreeLook
     private CinemachineFreeLook cinemachine;
+    //! A reference to Joystick
     public Joystick joystick;
     //! The X modifer
     public float X_look_speed_modifer;
