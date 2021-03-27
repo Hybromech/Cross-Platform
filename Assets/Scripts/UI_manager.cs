@@ -29,7 +29,7 @@ public class UI_manager : MonoBehaviour
     */
     public void button_start()
     {
-        SceneManager.LoadScene("Scene6_new");//start the game.
+        SceneManager.LoadScene("Scene6");//start the game.
     }
     /**
     @brief Display the win image

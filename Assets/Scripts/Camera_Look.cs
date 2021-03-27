@@ -23,8 +23,27 @@ public class Camera_Look : MonoBehaviour
     //! Modify the X and Y value of the CinemachineFreeLook based on joystick input.
     void Update()
     {
+        //Touch Joystick controls
         cinemachine.m_XAxis.Value += joystick.Horizontal * X_look_speed_modifer;
         cinemachine.m_YAxis.Value += joystick.Vertical * Y_look_speed_modifer;
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            cinemachine.m_XAxis.Value -= 1 * X_look_speed_modifer;
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            cinemachine.m_XAxis.Value += 1 * X_look_speed_modifer;
+        }
+        
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            cinemachine.m_YAxis.Value -= (1 * Y_look_speed_modifer)/4;
+        }
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            cinemachine.m_YAxis.Value += (1 * Y_look_speed_modifer)/4;
+        }
     }
 }
 

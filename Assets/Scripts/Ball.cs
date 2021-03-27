@@ -10,6 +10,8 @@ public class Ball : MonoBehaviour
     // Start is called before the first frame update
     //! Number of stars
     public int stars = 0;
+    //! The health of the player
+    public int health;
     //! Update win/lose condition.
     void Update()
     {
@@ -20,6 +22,11 @@ public class Ball : MonoBehaviour
         }
         if (transform.position.y <= -56.4)
         {
+            Destroy(this.gameObject);
+        }
+        if (health <= 0)
+        {
+            Debug.Log("Hit Cactus");
             Destroy(this.gameObject);
         }
     }
@@ -33,7 +40,7 @@ public class Ball : MonoBehaviour
         if (collision.gameObject.tag == "cactus")
         {
             Debug.Log("Hit Cactus");
-            Destroy(this.gameObject);
+            health -= 1;
         }
     }
 }

@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     //! Set Variables and start coroutinte update_fps
     void Start()
     {
+        //Debug.Log("minSdkVersion" + UnityEditor.PlayerSettings.Android.minSdkVersion.ToString());
         loc = player.GetComponent<Locamotion>();
         ball = player.GetComponent<Ball>();
         StartCoroutine(update_fps());
@@ -57,13 +58,14 @@ public class GameManager : MonoBehaviour
         if (player == null)//if player is dead.
         {
             fade.fade_out = true;//fade out.
+            fade.alpha_mod = 0.001f;
             if (fade.alpha_value >= 1)//if is black.
             {
                 SceneManager.LoadScene("Main_menu");//restart the game.
             }  
         }
     }
-    //! Updates the fps every second.
+    //! Updates the fps counter on screen.
     IEnumerator update_fps()
     {
         // suspend execution for 5 seconds

@@ -85,12 +85,14 @@ public class Locamotion : MonoBehaviour
     */
     private void Propel()
     {
-        //float hor_axis = joystick.Horizontal;
-        //float vert_axis = joystick.Vertical;
-            //Get input
-            float hor_axis = Input.GetAxis("Horizontal");
-            float vert_axis = Input.GetAxis("Vertical");
-            Debug.Log("hor_axis" + hor_axis);
+        //Touch joystick controls
+        float hor_axis = joystick.Horizontal;
+        float vert_axis = joystick.Vertical;
+        //Get input
+        //Xbox joystick controls
+        //float hor_axis = Input.GetAxis("Horizontal");
+        //float vert_axis = Input.GetAxis("Vertical");
+        Debug.Log("hor_axis" + hor_axis);
             Debug.Log("vert_axis" + vert_axis);
       try {
             //Get the vector of direction
